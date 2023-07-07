@@ -1,0 +1,11 @@
+[Unit]
+Description=Custom VLC
+
+[Install]
+WantedBy=multi-user.target
+
+[Service]
+User=dufko
+Type=simple
+ExecStart=/usr/bin/bash /home/dufko/start_vlc.sh
+Restart=always
