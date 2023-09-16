@@ -30,12 +30,12 @@ User=$USER" | sudo tee -a /etc/systemd/system/customvlc.service
 echo "
 Type=simple
 ExecStart=/usr/bin/bash /home/$USER/start_vlc.sh
-Restart=always
+Restart=on-failure
 " | sudo tee -a /etc/systemd/system/customvlc.service
 
 sudo systemctl daemon-reload
 sudo systemctl start customvlc.service
 sudo systemctl enable customvlc.service
 
-echo "Now in raspi-config enable readonly partition and splash screen, TODO automate this"
+echo "Now in raspi-config enable readonly partition, splash screen, set bigger gpu memory and check for dots in output video"
 read
