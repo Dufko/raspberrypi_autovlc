@@ -27,11 +27,11 @@ User=$USER" | sudo tee -a /etc/systemd/system/customvlc.service
 
 #echo "$USER" | sudo tee -a /etc/systemd/system/customvlc.service
 
-echo '
+echo "
 Type=simple
-ExecStart=/usr/bin/bash /home/dufko/start_vlc.sh
+ExecStart=/usr/bin/bash /home/$USER/start_vlc.sh
 Restart=always
-' | sudo tee -a /etc/systemd/system/customvlc.service
+" | sudo tee -a /etc/systemd/system/customvlc.service
 
 sudo systemctl daemon-reload
 sudo systemctl start customvlc.service
