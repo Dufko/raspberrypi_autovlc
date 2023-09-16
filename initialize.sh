@@ -34,6 +34,10 @@ Restart=on-failure
 " | sudo tee -a /etc/systemd/system/customvlc.service
 
 sudo systemctl daemon-reload
+
+echo "Now starting service"
+read
+
 sudo systemctl start customvlc.service
 sudo systemctl enable customvlc.service
 
